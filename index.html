@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Naveen KP — Creative Technologist</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#0a0a0f;--bg2:#11111a;--bg3:#181824;
+  --accent:#c8ff57;--accent2:#57c8ff;--accent3:#ff8c57;
+  --text:#f0efe8;--muted:#8a8a9a;--border:#ffffff12;--card:#ffffff07;
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;line-height:1.6;overflow-x:hidden}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.2rem 4rem;display:flex;justify-content:space-between;align-items:center;background:rgba(10,10,15,0.9);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
+.nav-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:1.1rem;letter-spacing:-0.02em}
+.nav-logo span{color:var(--accent)}
+.nav-links{display:flex;gap:2rem}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:0.8rem;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;transition:color 0.2s}
+.nav-links a:hover{color:var(--accent)}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:8rem 4rem 4rem;position:relative;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 55% 55% at 75% 50%,#c8ff5712 0%,transparent 70%),radial-gradient(ellipse 35% 45% at 15% 75%,#57c8ff0a 0%,transparent 60%);pointer-events:none}
+.hero-tag{display:inline-flex;align-items:center;gap:0.6rem;background:var(--card);border:1px solid var(--border);border-radius:100px;padding:0.4rem 1.1rem;font-size:0.75rem;color:var(--muted);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:2rem;width:fit-content}
+.dot-pulse{width:7px;height:7px;border-radius:50%;background:var(--accent);animation:pulse 2s infinite;flex-shrink:0}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.4;transform:scale(0.8)}}
+.hero h1{font-family:'Syne',sans-serif;font-size:clamp(2.8rem,6.5vw,5.5rem);font-weight:800;line-height:1.0;letter-spacing:-0.03em;margin-bottom:1.2rem;max-width:820px}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero-sub{font-size:1.05rem;color:var(--muted);max-width:520px;font-weight:300;line-height:1.85;margin-bottom:2.5rem}
+.hero-pills{display:flex;flex-wrap:wrap;gap:0.55rem;margin-bottom:3rem}
+.pill{background:var(--bg3);border:1px solid var(--border);border-radius:100px;padding:0.3rem 0.85rem;font-size:0.77rem;color:var(--muted)}
+.pill.hi{border-color:#c8ff5730;color:var(--accent)}
+.hero-cta{display:flex;gap:1rem;flex-wrap:wrap}
+.btn-p{background:var(--accent);color:#0a0a0f;padding:0.8rem 2rem;border-radius:8px;text-decoration:none;font-weight:600;font-size:0.88rem;transition:transform 0.2s,box-shadow 0.2s}
+.btn-p:hover{transform:translateY(-2px);box-shadow:0 10px 32px #c8ff5728}
+.btn-s{border:1px solid var(--border);color:var(--text);padding:0.8rem 2rem;border-radius:8px;text-decoration:none;font-size:0.88rem;transition:border-color 0.2s}
+.btn-s:hover{border-color:#ffffff35}
+
+/* SECTIONS */
+section{padding:6rem 4rem}
+.s-label{font-size:0.72rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:0.9rem}
+.s-title{font-family:'Syne',sans-serif;font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:800;letter-spacing:-0.025em;line-height:1.1;margin-bottom:1.2rem}
+.s-sub{color:var(--muted);max-width:540px;font-weight:300;line-height:1.85;margin-bottom:3rem}
+
+/* ABOUT */
+.about{background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.about-grid{display:grid;grid-template-columns:1.1fr 0.9fr;gap:5rem;align-items:start}
+.about-text p{color:var(--muted);font-weight:300;line-height:1.9;margin-bottom:1.3rem;font-size:0.95rem}
+.about-text p strong{color:var(--text);font-weight:500}
+.stats-box{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);border:1px solid var(--border);border-radius:14px;overflow:hidden;margin-bottom:1.5rem}
+.stat{background:var(--bg3);padding:1.6rem 1.2rem;text-align:center}
+.stat-n{font-family:'Syne',sans-serif;font-size:2rem;font-weight:800;color:var(--accent);display:block;line-height:1}
+.stat-l{font-size:0.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em;margin-top:0.4rem;display:block}
+.brahma-badge{background:linear-gradient(135deg,#c8ff5715,#57c8ff10);border:1px solid #c8ff5730;border-radius:12px;padding:1.2rem 1.5rem;display:flex;align-items:center;gap:1rem}
+.brahma-dot{width:10px;height:10px;border-radius:50%;background:var(--accent);flex-shrink:0;animation:pulse 2s infinite}
+.brahma-text p{font-size:0.78rem;color:var(--muted);margin:0}
+.brahma-text strong{color:var(--text);font-size:0.88rem;font-weight:500}
+
+/* SKILLS */
+.skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
+.sk-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1.7rem;transition:border-color 0.3s,transform 0.3s;cursor:default}
+.sk-card:hover{border-color:#c8ff5728;transform:translateY(-3px)}
+.sk-ico{font-size:1.5rem;margin-bottom:1rem;display:block}
+.sk-card h3{font-family:'Syne',sans-serif;font-size:0.95rem;font-weight:700;margin-bottom:0.6rem;letter-spacing:-0.01em}
+.sk-card p{font-size:0.83rem;color:var(--muted);line-height:1.7;margin-bottom:1rem}
+.tags{display:flex;flex-wrap:wrap;gap:0.35rem}
+.tag{background:var(--bg3);border:1px solid var(--border);border-radius:4px;padding:0.18rem 0.55rem;font-size:0.7rem;color:var(--muted)}
+.tag.hi{border-color:#c8ff5730;color:#c8ff57aa}
+
+/* PROJECTS */
+.projects{background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.proj-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem}
+.proj-card{background:var(--bg3);border:1px solid var(--border);border-radius:14px;padding:2rem;transition:border-color 0.3s,transform 0.2s;position:relative;overflow:hidden}
+.proj-card:hover{border-color:#ffffff20;transform:translateY(-2px)}
+.proj-card.star{grid-column:span 2;display:grid;grid-template-columns:1.2fr 0.8fr;gap:2.5rem;align-items:center;border-color:#c8ff5720;background:linear-gradient(135deg,#c8ff5706,#57c8ff04)}
+.proj-card.star:hover{border-color:#c8ff5740}
+.proj-badge{display:inline-block;font-size:0.68rem;font-weight:700;letter-spacing:0.09em;text-transform:uppercase;padding:0.22rem 0.65rem;border-radius:4px;margin-bottom:1rem}
+.pb-green{background:#c8ff5720;color:var(--accent)}
+.pb-blue{background:#57c8ff20;color:var(--accent2)}
+.pb-orange{background:#ff8c5720;color:var(--accent3)}
+.pb-white{background:#ffffff12;color:#ffffffaa}
+.proj-card h3{font-family:'Syne',sans-serif;font-size:1.05rem;font-weight:700;margin-bottom:0.7rem;letter-spacing:-0.01em}
+.proj-card p{font-size:0.86rem;color:var(--muted);line-height:1.75;margin-bottom:1.2rem}
+.proj-link{display:inline-flex;align-items:center;gap:0.4rem;color:var(--accent);font-size:0.8rem;font-weight:500;text-decoration:none;border-bottom:1px solid #c8ff5740;padding-bottom:1px;transition:border-color 0.2s}
+.proj-link:hover{border-color:var(--accent)}
+.proj-visual{background:var(--bg);border:1px solid var(--border);border-radius:10px;height:150px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:0.5rem}
+.proj-visual span{font-size:2.2rem}
+.proj-visual p{font-size:0.72rem;color:var(--muted)}
+
+/* ── GALLERY ── */
+#gallery{background:var(--bg2);border-top:1px solid var(--border)}
+.masonry{
+  columns:3;
+  column-gap:1.2rem;
+  margin-bottom:2.5rem;
+}
+.masonry-item{
+  break-inside:avoid;
+  margin-bottom:1.2rem;
+  border-radius:14px;
+  overflow:hidden;
+  position:relative;
+  background:var(--bg3);
+  border:1px solid var(--border);
+  cursor:pointer;
+  transition:transform 0.3s cubic-bezier(.22,.68,0,1.2),border-color 0.3s,box-shadow 0.3s;
+}
+.masonry-item:hover{
+  transform:translateY(-5px) scale(1.01);
+  border-color:#c8ff5735;
+  box-shadow:0 16px 40px rgba(0,0,0,0.4);
+}
+
+/* photo */
+.masonry-item img{
+  width:100%;
+  display:block;
+  object-fit:cover;
+}
+.media-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(0,0,0,0.82) 0%,rgba(0,0,0,0.1) 55%,transparent 100%);
+  display:flex;flex-direction:column;justify-content:flex-end;
+  padding:1rem;
+  opacity:0;transition:opacity 0.3s;
+}
+.masonry-item:hover .media-overlay{opacity:1}
+.media-caption{font-size:0.78rem;color:#ffffffdd;line-height:1.4;font-weight:400}
+.media-badge{
+  display:inline-block;font-size:0.6rem;font-weight:700;
+  letter-spacing:0.1em;text-transform:uppercase;
+  padding:0.2rem 0.55rem;border-radius:4px;margin-bottom:0.4rem;
+  width:fit-content;
+}
+.badge-photo{background:#c8ff5722;color:var(--accent);border:1px solid #c8ff5730}
+.badge-reel{background:#57c8ff22;color:var(--accent2);border:1px solid #57c8ff30}
+
+/* ── VIDEO CARD ── */
+.video-wrap{position:relative;width:100%;background:#000;min-height:180px}
+.video-wrap video{width:100%;display:block;object-fit:cover}
+
+/* thumbnail canvas shown before play */
+.video-thumb{
+  position:absolute;inset:0;width:100%;height:100%;
+  object-fit:cover;display:block;
+}
+
+/* overlay shown when paused / not started */
+.vov{
+  position:absolute;inset:0;
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  background:rgba(0,0,0,0.45);
+  transition:background 0.25s;
+}
+.vov:hover{background:rgba(0,0,0,0.3)}
+.vov.hidden{display:none}
+
+.ctrl-btn{
+  width:58px;height:58px;border-radius:50%;
+  background:rgba(200,255,87,0.93);
+  display:flex;align-items:center;justify-content:center;
+  transition:transform 0.2s,box-shadow 0.25s;
+  border:2px solid rgba(200,255,87,0.4);
+}
+.ctrl-btn:hover{transform:scale(1.12);box-shadow:0 0 28px #c8ff5755}
+.ctrl-btn svg{display:block}
+
+/* pause button shown while playing — bottom right corner */
+.pause-btn{
+  position:absolute;bottom:0.7rem;right:0.7rem;
+  width:36px;height:36px;border-radius:50%;
+  background:rgba(0,0,0,0.65);border:1px solid rgba(200,255,87,0.4);
+  display:none;align-items:center;justify-content:center;
+  cursor:pointer;transition:background 0.2s,transform 0.2s;
+  z-index:5;
+}
+.pause-btn:hover{background:rgba(0,0,0,0.85);transform:scale(1.1)}
+.pause-btn.visible{display:flex}
+.pause-btn svg{display:block}
+
+.video-caption-bar{
+  padding:0.65rem 1rem;
+  display:flex;align-items:center;gap:0.55rem;
+  border-top:1px solid var(--border);
+  background:var(--bg3);
+}
+.vc-text{font-size:0.76rem;color:var(--muted)}
+
+.g-tools{
+  text-align:center;font-size:0.78rem;color:var(--muted);
+  letter-spacing:0.06em;margin-top:0.5rem;
+  padding:1rem;border-top:1px solid var(--border);
+}
+
+/* EXPERIENCE */
+.exp-list{display:flex;flex-direction:column;gap:0;border:1px solid var(--border);border-radius:14px;overflow:hidden}
+.exp-item{padding:2rem;border-bottom:1px solid var(--border);background:var(--card);transition:background 0.2s}
+.exp-item:last-child{border-bottom:none}
+.exp-item:hover{background:#ffffff05}
+.exp-header{display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;margin-bottom:0.8rem}
+.exp-co{font-family:'Syne',sans-serif;font-size:0.78rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);margin-bottom:0.3rem}
+.exp-role{font-family:'Syne',sans-serif;font-size:1rem;font-weight:700;letter-spacing:-0.01em}
+.exp-date{font-size:0.75rem;color:var(--muted);white-space:nowrap;background:var(--bg3);border:1px solid var(--border);border-radius:100px;padding:0.25rem 0.8rem;flex-shrink:0}
+.exp-desc{font-size:0.85rem;color:var(--muted);line-height:1.75;margin-bottom:1rem}
+.exp-projs{display:flex;flex-wrap:wrap;gap:0.4rem}
+.ep{background:var(--bg3);border:1px solid var(--border);border-radius:4px;padding:0.18rem 0.6rem;font-size:0.72rem;color:var(--muted)}
+
+/* JOURNEY */
+.journey-wrap{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
+.timeline{position:relative;padding-left:1.8rem}
+.timeline::before{content:'';position:absolute;left:0;top:10px;bottom:0;width:1px;background:var(--border)}
+.tl-item{position:relative;margin-bottom:2.2rem}
+.tl-item::before{content:'';position:absolute;left:-1.8rem;top:9px;width:8px;height:8px;border-radius:50%;background:var(--bg3);border:1px solid var(--border);transform:translateX(-3.5px)}
+.tl-item.now::before{background:var(--accent);border-color:var(--accent);box-shadow:0 0 8px #c8ff5750}
+.tl-year{font-size:0.72rem;color:var(--accent);font-weight:600;letter-spacing:0.1em;margin-bottom:0.3rem}
+.tl-item h3{font-family:'Syne',sans-serif;font-size:0.95rem;font-weight:700;margin-bottom:0.35rem}
+.tl-item p{font-size:0.83rem;color:var(--muted);line-height:1.7}
+.vision-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:2.5rem;position:sticky;top:7rem}
+.vision-card h3{font-family:'Syne',sans-serif;font-size:1.2rem;font-weight:800;margin-bottom:1.2rem;letter-spacing:-0.01em}
+.vision-item{display:flex;gap:0.8rem;margin-bottom:1.4rem;align-items:flex-start}
+.vi-ico{width:32px;height:32px;border-radius:8px;background:var(--bg3);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0}
+.vi-text strong{display:block;font-size:0.88rem;font-weight:500;margin-bottom:0.2rem}
+.vi-text p{font-size:0.8rem;color:var(--muted);line-height:1.6}
+
+/* CONTACT */
+.contact{background:var(--bg2);border-top:1px solid var(--border)}
+.contact-inner{max-width:680px}
+.contact-links{display:flex;flex-wrap:wrap;gap:0.8rem;margin-top:2.5rem}
+.c-link{display:flex;align-items:center;gap:0.6rem;background:var(--card);border:1px solid var(--border);border-radius:10px;padding:0.75rem 1.4rem;text-decoration:none;color:var(--text);font-size:0.85rem;transition:border-color 0.2s,color 0.2s}
+.c-link:hover{border-color:var(--accent);color:var(--accent)}
+
+footer{border-top:1px solid var(--border);padding:2rem 4rem;display:flex;justify-content:space-between;align-items:center}
+footer p{color:var(--muted);font-size:0.78rem}
+.f-accent{color:var(--accent)}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .masonry{columns:2}
+  .about-grid,.proj-card.star,.journey-wrap{grid-template-columns:1fr}
+  .proj-card.star{grid-column:span 1}
+  .skills-grid{grid-template-columns:1fr 1fr}
+  .proj-grid{grid-template-columns:1fr}
+}
+@media(max-width:600px){
+  nav{padding:1rem 1.5rem}.nav-links{display:none}
+  .hero,.about,.projects,.contact,section{padding:5rem 1.5rem 3rem}
+  .hero h1{font-size:2.4rem}
+  .masonry{columns:1}
+  .skills-grid{grid-template-columns:1fr}
+  footer{flex-direction:column;gap:0.8rem;text-align:center;padding:2rem 1.5rem}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Naveen<span>.</span>KP</div>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#experience">Experience</a>
+    <a href="#journey">Journey</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-tag"><div class="dot-pulse"></div>Open to opportunities · Kerala, India</div>
+  <h1>Creative Technologist.<br>Builder. <em>Storyteller.</em></h1>
+  <p class="hero-sub">9 years of frontend engineering meets AI automation, content creation and wellness branding. I vibe-code, design experiences and tell stories that connect technology with humanity.</p>
+  <div class="hero-pills">
+    <span class="pill hi">Co-Founder · brahmaspace.com</span>
+    <span class="pill hi">Vibe Coder · AI-First Builder</span>
+    <span class="pill">AI Tools & Automation</span>
+    <span class="pill">Frontend Engineering</span>
+    <span class="pill">Social Media & Content</span>
+    <span class="pill">Wellness & Mindful Living</span>
+    <span class="pill">n8n · Zapier · Cursor · Lovable</span>
+  </div>
+  <div class="hero-cta">
+    <a href="#projects" class="btn-p">See My Work</a>
+    <a href="#contact" class="btn-s">Let's Connect</a>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="s-label">About Me</div>
+  <div class="about-grid">
+    <div class="about-text">
+      <div class="s-title">Engineer.<br>Creator.<br>Explorer.</div>
+      <p>I'm <strong>Naveen KP</strong> — a BTech Computer Science engineer from Calicut University with <strong>9 years of professional frontend experience</strong> across startups, mid-cap IT companies and global MNCs like Accenture and Altimetrik.</p>
+      <p>I built enterprise web applications for clients across Banking (FIS Global), Healthcare (NHS UK), Energy (Ecolab), AI Platforms (Accenture myWizard) and EdTech (Carnegie Learning, US) — leading teams, mentoring developers and delivering production-grade frontend systems.</p>
+      <p>Then life took a beautiful turn. I travelled Himachal Pradesh, got married to a <strong>Yoga trainer</strong>, and discovered that visual storytelling and creative design lit me up in ways code never fully did. I began creating content for wellness brands — designing, shooting, editing — and couldn't stop.</p>
+      <p>Today I build using a <strong>vibe-first, AI-assisted approach</strong> — where intuition, tools like Cursor and Lovable, and rapid iteration replace conventional line-by-line coding. I sit at the intersection of <strong>technical depth, creative instinct and AI leverage</strong>, and I am Co-Founder & Creative Head of <strong>brahmaspace.com</strong>.</p>
+    </div>
+    <div>
+      <div class="stats-box">
+        <div class="stat"><span class="stat-n">9+</span><span class="stat-l">Years in Tech</span></div>
+        <div class="stat"><span class="stat-n">5</span><span class="stat-l">Enterprise Clients</span></div>
+        <div class="stat"><span class="stat-n">10+</span><span class="stat-l">AI Tools Active</span></div>
+        <div class="stat"><span class="stat-n">2026</span><span class="stat-l">Co-Founded Brahmaspace</span></div>
+      </div>
+      <div class="brahma-badge">
+        <div class="brahma-dot"></div>
+        <div class="brahma-text">
+          <strong>brahmaspace.com — Live & Growing</strong>
+          <p>Co-Founder & Creative Head · Wellness & Meditation Platform</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="s-label">What I Bring</div>
+  <div class="s-title">Skills & Tools</div>
+  <p class="s-sub">A rare hybrid stack — enterprise engineering experience, creative production skills and cutting-edge AI tool mastery.</p>
+  <div class="skills-grid">
+    <div class="sk-card">
+      <span class="sk-ico">⚡</span>
+      <h3>Frontend Engineering</h3>
+      <p>9 years of production-grade frontend across enterprise clients and MNCs. Led migrations, mentored teams, delivered at scale.</p>
+      <div class="tags">
+        <span class="tag hi">Angular</span><span class="tag hi">React</span><span class="tag">TypeScript</span><span class="tag">JavaScript</span><span class="tag">HTML5</span><span class="tag">CSS3</span><span class="tag">Bootstrap</span><span class="tag">D3 / Highcharts</span><span class="tag">Figma</span><span class="tag">Angular Material</span>
+      </div>
+    </div>
+    <div class="sk-card">
+      <span class="sk-ico">🤖</span>
+      <h3>AI & Vibe Coding</h3>
+      <p>Building AI-powered workflows and products using a vibe-first, intuition-led approach — Cursor, Lovable, n8n and agentic AI replace conventional development cycles.</p>
+      <div class="tags">
+        <span class="tag hi">Cursor</span><span class="tag hi">Lovable</span><span class="tag hi">n8n</span><span class="tag hi">Zapier</span><span class="tag">ChatGPT</span><span class="tag">Claude</span><span class="tag">Gemini</span><span class="tag">Prompt Engineering</span><span class="tag">Python</span>
+      </div>
+    </div>
+    <div class="sk-card">
+      <span class="sk-ico">🎨</span>
+      <h3>Content & Creative</h3>
+      <p>Photography, video production, reel editing and brand design for wellness and lifestyle brands on social media.</p>
+      <div class="tags">
+        <span class="tag hi">Canva</span><span class="tag">Adobe Express</span><span class="tag">Clipchamp</span><span class="tag">CapCut</span><span class="tag">Instagram Reels</span><span class="tag">Video Editing</span>
+      </div>
+    </div>
+    <div class="sk-card">
+      <span class="sk-ico">🎬</span>
+      <h3>AI Video & Media</h3>
+      <p>Creating meditation, ambient and wellness content using AI video generation — merging technology with mindful storytelling.</p>
+      <div class="tags">
+        <span class="tag hi">Gemini Video</span><span class="tag">AI Content Systems</span><span class="tag">Meditation Videos</span><span class="tag">Voice & Audio</span>
+      </div>
+    </div>
+    <div class="sk-card">
+      <span class="sk-ico">📱</span>
+      <h3>Social Media & Growth</h3>
+      <p>End-to-end social media management for wellness brands — strategy, content calendars, campaigns and analytics.</p>
+      <div class="tags">
+        <span class="tag hi">Instagram</span><span class="tag">Facebook</span><span class="tag">Google Business</span><span class="tag">Content Strategy</span><span class="tag">Campaign Management</span>
+      </div>
+    </div>
+    <div class="sk-card">
+      <span class="sk-ico">☁️</span>
+      <h3>DevOps & Cloud Basics</h3>
+      <p>CI/CD workflows, Azure DevOps, deployment pipelines and environment management from enterprise project experience.</p>
+      <div class="tags">
+        <span class="tag">Azure DevOps</span><span class="tag">CI/CD</span><span class="tag">GitHub</span><span class="tag">JIRA</span><span class="tag">Azure AZ-900</span><span class="tag">Vercel</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section class="projects" id="projects">
+  <div class="s-label">Selected Work</div>
+  <div class="s-title">Projects & Ventures</div>
+  <p class="s-sub">From enterprise platforms to creative wellness ventures — work that spans technology, content and conscious living.</p>
+  <div class="proj-grid">
+    <div class="proj-card star">
+      <div>
+        <div class="proj-badge pb-green">Co-Founder · Live</div>
+        <h3>brahmaspace.com — Wellness & Meditation Platform</h3>
+        <p>Co-founded and built brahmaspace.com as Creative Head — a wellness and meditation platform for yoga, mindfulness and conscious living. Responsible for the complete digital presence: website design and development using Lovable and Claude AI, social media strategy, AI-generated meditation video content, and brand identity.</p>
+        <div class="tags" style="margin-bottom:1.2rem">
+          <span class="tag hi">Lovable</span><span class="tag hi">Claude AI</span><span class="tag hi">Gemini Video</span><span class="tag">Canva</span><span class="tag">n8n</span><span class="tag">Python</span><span class="tag">Instagram</span>
+        </div>
+        <a href="https://brahmaspace.com" class="proj-link" target="_blank">Visit brahmaspace.com →</a>
+      </div>
+      <div class="proj-visual"><span>🧘</span><p>Wellness & Meditation Platform</p></div>
+    </div>
+    <div class="proj-card">
+      <div class="proj-badge pb-blue">AI Automation</div>
+      <h3>AI Content Extraction System</h3>
+      <p>Built a Python-based AI content extraction pipeline that automates the creation and processing of wellness content — reducing manual effort and scaling output for the brahmaspace brand.</p>
+      <div class="tags"><span class="tag hi">Python</span><span class="tag">n8n</span><span class="tag">AI APIs</span><span class="tag">Automation</span></div>
+    </div>
+    <div class="proj-card">
+      <div class="proj-badge pb-orange">Enterprise · MNC</div>
+      <h3>NHS Mail — UK Healthcare Platform</h3>
+      <p>Led frontend development for NHS UK's admin mail platform. Proposed and executed AngularJS to Angular migration POC, ran both frameworks in one application, mentored a team of associate developers.</p>
+      <div class="tags"><span class="tag">Angular</span><span class="tag">AngularJS</span><span class="tag">Migration</span><span class="tag">Team Lead</span></div>
+    </div>
+    <div class="proj-card">
+      <div class="proj-badge pb-orange">Enterprise · MNC</div>
+      <h3>Ecolab 3D — Water Analytics Portal</h3>
+      <p>Led the frontend team for Ecolab's enterprise water analytics platform — Angular 4 to 8 upgrade, module development, team code reviews, build and deployment coordination across environments.</p>
+      <div class="tags"><span class="tag">Angular</span><span class="tag">Bootstrap</span><span class="tag">HTML5</span><span class="tag">Azure DevOps</span></div>
+    </div>
+    <div class="proj-card">
+      <div class="proj-badge pb-white">Enterprise · AI Platform</div>
+      <h3>Accenture myWizard InGrain</h3>
+      <p>Developed modules for Accenture's intelligent automation platform powered by AI virtual agents — Angular UI, D3 charts, critical bug resolution, multi-environment deployment.</p>
+      <div class="tags"><span class="tag">Angular</span><span class="tag">D3 Charts</span><span class="tag">AI Platform</span></div>
+    </div>
+    <div class="proj-card">
+      <div class="proj-badge pb-white">Enterprise · EdTech</div>
+      <h3>Carnegie Learning MathiaX — US EdTech</h3>
+      <p>Developed modules for a cognitive tutor platform used by students and teachers across the US — AngularJS, custom directives, reusable components, client requirement sessions.</p>
+      <div class="tags"><span class="tag">AngularJS</span><span class="tag">HTML5</span><span class="tag">Custom Directives</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+  <div class="s-label">Creative · Social</div>
+  <div class="s-title">Visual Stories I've Built</div>
+  <p class="s-sub">Photography, reels and content created for wellness and yoga brands — shot, edited and produced using AI-assisted tools.</p>
+
+  <div class="masonry" id="masonry"></div>
+  <p class="g-tools">Content created using Canva · Adobe Express · CapCut · Gemini AI</p>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience" style="background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+  <div class="s-label">Work History</div>
+  <div class="s-title">Professional Experience</div>
+  <p class="s-sub">9 years across enterprise MNCs and product companies — always at the frontend, often leading teams.</p>
+  <div class="exp-list">
+    <div class="exp-item">
+      <div class="exp-header">
+        <div><div class="exp-co">Brahmaspace.com</div><div class="exp-role">Co-Founder & Creative Head</div></div>
+        <div class="exp-date">2024 – Present</div>
+      </div>
+      <p class="exp-desc">Co-founded a wellness and meditation platform. Leading all creative and digital operations — website development, AI content systems, social media strategy, brand identity and video production. Vibe coding with Cursor, Lovable and Claude AI to ship fast and beautifully.</p>
+      <div class="exp-projs"><span class="ep">brahmaspace.com</span><span class="ep">Vibe Coding</span><span class="ep">AI Content</span><span class="ep">Social Media</span></div>
+    </div>
+    <div class="exp-item">
+      <div class="exp-header">
+        <div><div class="exp-co">Altimetrik</div><div class="exp-role">Staff Engineer — Product & Platform</div></div>
+        <div class="exp-date">Sept 2023 – Apr 2024</div>
+      </div>
+      <p class="exp-desc">Implemented React in production projects, participated in sprint planning and estimation, fixed Priority 1 & 2 bugs, and designed UX page layouts using Figma wireframes for an FIS Global Banking platform.</p>
+      <div class="exp-projs"><span class="ep">FIS Global · Polaris · Banking</span><span class="ep">React</span><span class="ep">Figma</span></div>
+    </div>
+    <div class="exp-item">
+      <div class="exp-header">
+        <div><div class="exp-co">Accenture</div><div class="exp-role">Application Development Specialist</div></div>
+        <div class="exp-date">Feb 2021 – May 2022</div>
+      </div>
+      <p class="exp-desc">Led the frontend development team — requirement discussions with PO, BA and PM, story estimation, backend integration coordination, testing team collaboration and process performance improvements.</p>
+      <div class="exp-projs"><span class="ep">NHS Mail · UK Healthcare</span><span class="ep">Angular</span><span class="ep">Team Lead</span></div>
+    </div>
+    <div class="exp-item">
+      <div class="exp-header">
+        <div><div class="exp-co">Accenture</div><div class="exp-role">Senior Application Development Analyst</div></div>
+        <div class="exp-date">Jan 2018 – Feb 2021</div>
+      </div>
+      <p class="exp-desc">Research and feasibility analysis, timely delivery of stories, build creation and QA delegation, mentoring ASEs. Worked across Ecolab 3D (Energy), myWizard InGrain (AI) and Carnegie Learning (EdTech US).</p>
+      <div class="exp-projs"><span class="ep">Ecolab 3D · Energy</span><span class="ep">myWizard · AI</span><span class="ep">Carnegie Learning · US</span></div>
+    </div>
+    <div class="exp-item">
+      <div class="exp-header">
+        <div><div class="exp-co">RapidValue IT Services (Aspire Systems)</div><div class="exp-role">Senior Software Engineer</div></div>
+        <div class="exp-date">Aug 2016 – Jan 2018</div>
+      </div>
+      <p class="exp-desc">Client requirement gathering, component architecture decisions, UX collaboration, team onboarding and mentoring, hot bug fixes. Awarded Technical Excellence in Aug 2016.</p>
+      <div class="exp-projs"><span class="ep">AngularJS</span><span class="ep">Client Facing</span><span class="ep">🏆 Technical Excellence Award</span></div>
+    </div>
+    <div class="exp-item">
+      <div class="exp-header">
+        <div><div class="exp-co">RapidValue IT Services (Aspire Systems)</div><div class="exp-role">Software Engineer</div></div>
+        <div class="exp-date">Jan 2014 – Aug 2016</div>
+      </div>
+      <p class="exp-desc">Designed web page templates, created components, bound logic, optimised page performance, handled bug fixes and ensured timely deliveries. Grew from associate to recognised engineer.</p>
+      <div class="exp-projs"><span class="ep">AngularJS</span><span class="ep">HTML5</span><span class="ep">CSS3</span><span class="ep">JavaScript</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- JOURNEY & VISION -->
+<section id="journey">
+  <div class="s-label">Story & Vision</div>
+  <div class="s-title">The Journey</div>
+  <div class="journey-wrap">
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-year">2009 – 2013</div>
+        <h3>BTech CSE · Calicut University</h3>
+        <p>Graduated from Vidya Academy of Science & Technology. Built a passion for technology and a curiosity for creating things from scratch.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">2014 – 2018</div>
+        <h3>RapidValue IT Services · Software → Senior Engineer</h3>
+        <p>Entered IT through frontend development. Mastered AngularJS, HTML5, CSS3. Grew from junior to senior engineer. Won Technical Excellence Award 2016. First taste of leadership and client-facing work.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">2018 – 2022</div>
+        <h3>Accenture · Senior Analyst → Specialist</h3>
+        <p>Joined a global MNC. Led teams across 4 enterprise clients in Healthcare, Energy, AI and EdTech. Executed AngularJS to Angular migrations. Mentored developers, coordinated deployments, delivered at scale.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">2023 – 2024</div>
+        <h3>Altimetrik · Staff Engineer</h3>
+        <p>React implementation for FIS Global banking platform. Worked with Figma for UX design, resolved critical priority bugs, participated in agile sprint delivery.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">2022 – 2024</div>
+        <h3>The Pivot — Himachal, Marriage & Discovery</h3>
+        <p>A deliberate break that changed everything. Travelled Himachal Pradesh. Married a Yoga trainer. Discovered video creation, Canva design and the joy of visual storytelling. Perspective shifted permanently.</p>
+      </div>
+      <div class="tl-item now">
+        <div class="tl-year">2024 – Now</div>
+        <h3>Co-Founder · brahmaspace.com · Vibe Coder</h3>
+        <p>Co-founded brahmaspace.com. Mastered AI tools — n8n, Zapier, Cursor, Gemini, Claude, Lovable. Building AI content systems, wellness platforms and social media brands through vibe coding — intuition-led, AI-assisted, fast.</p>
+      </div>
+    </div>
+    <div class="vision-card">
+      <h3>Where I'm Headed</h3>
+      <div class="vision-item">
+        <div class="vi-ico">🌿</div>
+        <div class="vi-text">
+          <strong>Wellness & Conscious Living</strong>
+          <p>Building brahmaspace.com as a global platform for yoga, meditation and mindful living — targeting international wellness communities.</p>
+        </div>
+      </div>
+      <div class="vision-item">
+        <div class="vi-ico">🤖</div>
+        <div class="vi-text">
+          <strong>AI-Powered Digital Systems</strong>
+          <p>Using vibe coding, agentic workflows and AI content pipelines to help organizations and creators scale their digital impact.</p>
+        </div>
+      </div>
+      <div class="vision-item">
+        <div class="vi-ico">🎨</div>
+        <div class="vi-text">
+          <strong>Creative Content & Brand Building</strong>
+          <p>Social media strategy, video production and brand storytelling — especially for wellness, lifestyle and conscious brands.</p>
+        </div>
+      </div>
+      <div class="vision-item">
+        <div class="vi-ico">🌍</div>
+        <div class="vi-text">
+          <strong>International Presence</strong>
+          <p>Building connections within the global yoga and wellness community — from Varkala to the world.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="contact-inner">
+    <div class="s-label">Let's Connect</div>
+    <div class="s-title">Open to the right<br>opportunities.</div>
+    <p class="s-sub" style="margin-bottom:0">Whether you are a wellness brand needing a digital presence, an organization looking for AI-powered systems, or someone who resonates with this story — I'd love to talk.</p>
+    <div class="contact-links">
+      <a href="mailto:naveenkonikkara@gmail.com" class="c-link"><span>✉</span>naveenkonikkara@gmail.com</a>
+      <a href="https://brahmaspace.com" class="c-link" target="_blank"><span>🌿</span>brahmaspace.com</a>
+      <a href="https://naveenkp.space" class="c-link" target="_blank"><span>🌐</span>naveenkp.space</a>
+      <a href="https://linkedin.com/in/naveenkonikkara" class="c-link" target="_blank"><span>💼</span>LinkedIn</a>
+      <a href="https://github.com/Naveenkonikkara" class="c-link" target="_blank"><span>⚙</span>GitHub</a>
+      <a href="tel:+918281736656" class="c-link"><span>📞</span>+91 82817 36656</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 <span class="f-accent">Naveen KP</span> · Creative Technologist · Vibe Coder · Thrissur, Kerala</p>
+  <p>naveenkp.space</p>
+</footer>
+
+<script>
+// ── Gallery Data ──
+const GALLERY = [
+  { type:"reel", src:"https://res.cloudinary.com/dbsek7bxw/video/upload/v1778253383/wanderingg_sadhu_1687296466_3129591046892095474_4984933647_gthbr8.mp4", caption:"Wandering Sadhu · yoga reel" },
+  { type:"reel", src:"https://res.cloudinary.com/dbsek7bxw/video/upload/v1778253377/ranjani_nl_1718948522_3395108466644113576_5401604597_xw7sdl.mp4", caption:"Ranjani NL · wellness reel" },
+  { type:"reel", src:"https://res.cloudinary.com/dbsek7bxw/video/upload/v1778253376/wanderingg_sadhu_1680521416_3072757319214275107_4984933647_ywhq9w.mp4", caption:"Wandering Sadhu · asana flow" },
+  { type:"photo", src:"https://res.cloudinary.com/dbsek7bxw/image/upload/v1778253375/ranjani_nl_1594051059_2347392883722305692_5401604597_edvqje.jpg", caption:"Ranjani NL · feed post" },
+  { type:"photo", src:"https://res.cloudinary.com/dbsek7bxw/image/upload/v1778253375/ranjani_nl_1594065592_2347514789909974240_5401604597_pkhmsu.jpg", caption:"Ranjani NL · feed post" },
+  { type:"reel", src:"https://res.cloudinary.com/dbsek7bxw/video/upload/v1778253375/wanderingg_sadhu_1670687082_2990252588281634197_4984933647_bjnppp.mp4", caption:"Wandering Sadhu · meditation reel" },
+  { type:"reel", src:"https://res.cloudinary.com/dbsek7bxw/video/upload/v1778253373/wanderingg_sadhu_1701431524_3248164747635083534_4984933647_y51mjw.mp4", caption:"Wandering Sadhu · pranayama reel" },
+  { type:"reel", src:"https://res.cloudinary.com/dbsek7bxw/video/upload/v1778253372/wanderingg_sadhu_1689504353_3148112744439631772_4984933647_odgpjw.mp4", caption:"Wandering Sadhu · vinyasa flow" },
+  { type:"photo", src:"https://res.cloudinary.com/dbsek7bxw/image/upload/v1778253371/Screenshot_2026-05-08_090734_z509yd.png", caption:"Carousel post · wellness" },
+  { type:"photo", src:"https://res.cloudinary.com/dbsek7bxw/image/upload/v1778253370/Screenshot_2026-05-08_091650_ohtp8a.png", caption:"Carousel post · yoga tips" },
+  { type:"photo", src:"https://res.cloudinary.com/dbsek7bxw/image/upload/v1778253370/Screenshot_2026-05-08_090952_z9nnyg.png", caption:"Carousel post · wellness" },
+  { type:"photo", src:"https://res.cloudinary.com/dbsek7bxw/image/upload/v1778253370/Screenshot_2026-05-08_091438_rezikq.png", caption:"Carousel post · yoga tips" },
+  { type:"photo", src:"https://res.cloudinary.com/dbsek7bxw/image/upload/v1778253370/Screenshot_2026-05-08_091548_e4mlgt.png", caption:"Carousel post · mindfulness" },
+  { type:"photo", src:"https://res.cloudinary.com/dbsek7bxw/image/upload/v1778253370/Screenshot_2026-05-08_091059_xvrkdd.png", caption:"Carousel post · wellness" },
+  { type:"photo", src:"https://res.cloudinary.com/dbsek7bxw/image/upload/v1778253370/Screenshot_2026-05-08_091334_vg6dh4.png", caption:"Carousel post · yoga journey" },
+  { type:"reel", src:"https://res.cloudinary.com/dbsek7bxw/video/upload/v1778253369/ranjani_nl_1689503828_highlight17927875526191419_cg4eot.mp4", caption:"Ranjani NL · highlight reel" },
+  { type:"reel", src:"https://res.cloudinary.com/dbsek7bxw/video/upload/v1778253369/ranjani_nl_1683470365_highlight17927875526191419_hj4gll.mp4", caption:"Ranjani NL · highlight reel" },
+  { type:"reel", src:"https://res.cloudinary.com/dbsek7bxw/video/upload/v1778253368/ranjani_nl_1698906311_highlight17927875526191419_iji17k.mp4", caption:"Ranjani NL · highlight reel" },
+  { type:"reel", src:"https://res.cloudinary.com/dbsek7bxw/video/upload/v1778253368/wanderingg_sadhu_1676310598_3037433503570252901_4984933647_vi67xn.mp4", caption:"Wandering Sadhu · yoga reel" },
+  { type:"photo", src:"https://res.cloudinary.com/dbsek7bxw/image/upload/v1778253368/ranjani_nl_1655825845_highlight17927875526191419_fgmn8e.webp", caption:"Ranjani NL · highlight cover" },
+  { type:"reel", src:"https://res.cloudinary.com/dbsek7bxw/video/upload/v1778253367/ranjani_nl_1718872576_highlight17927875526191419_kwxsn1.mp4", caption:"Ranjani NL · highlight reel" },
+  { type:"reel", src:"https://res.cloudinary.com/dbsek7bxw/video/upload/v1778253367/ranjani_nl_1710748715_highlight17927875526191419_qggpi3.mp4", caption:"Ranjani NL · highlight reel" },
+  { type:"reel", src:"https://res.cloudinary.com/dbsek7bxw/video/upload/v1778253365/ranjani_nl_1693618164_highlight17927875526191419_rvxweq.mp4", caption:"Ranjani NL · highlight reel" },
+  { type:"reel", src:"https://res.cloudinary.com/dbsek7bxw/video/upload/v1778253364/ranjani_nl_1696654123_highlight17927875526191419_ffxjkq.mp4", caption:"Ranjani NL · highlight reel" },
+];
+
+// Track currently playing video globally
+let currentVideo = null;
+let currentPauseBtn = null;
+let currentOverlay = null;
+
+// SVG icons
+const PLAY_ICON = `<svg width="20" height="20" viewBox="0 0 24 24" fill="#0a0a0f"><polygon points="6,3 20,12 6,21"/></svg>`;
+const PAUSE_ICON = `<svg width="14" height="14" viewBox="0 0 24 24" fill="#c8ff57"><rect x="5" y="3" width="4" height="18" rx="1"/><rect x="15" y="3" width="4" height="18" rx="1"/></svg>`;
+
+function stopCurrent() {
+  if (currentVideo) {
+    currentVideo.pause();
+    currentVideo.currentTime = 0;
+    if (currentOverlay) { currentOverlay.classList.remove('hidden'); }
+    if (currentPauseBtn) { currentPauseBtn.classList.remove('visible'); }
+    currentVideo = null; currentOverlay = null; currentPauseBtn = null;
+  }
+}
+
+function buildPhotoCard(item) {
+  const div = document.createElement('div');
+  div.className = 'masonry-item';
+  div.innerHTML = `
+    <img src="${item.src}" alt="${item.caption}" loading="lazy">
+    <div class="media-overlay">
+      <span class="media-badge badge-photo">Photo</span>
+      <span class="media-caption">${item.caption}</span>
+    </div>`;
+  return div;
+}
+
+function generateThumbnail(video, canvas) {
+  // Seek to 0.5s to grab a representative frame
+  video.currentTime = 0.5;
+  video.addEventListener('seeked', function onSeeked() {
+    video.removeEventListener('seeked', onSeeked);
+    try {
+      canvas.width = video.videoWidth || 320;
+      canvas.height = video.videoHeight || 480;
+      canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);
+      canvas.style.display = 'block';
+    } catch(e) {}
+  }, { once: true });
+}
+
+function buildVideoCard(item) {
+  const div = document.createElement('div');
+  div.className = 'masonry-item';
+
+  const wrap = document.createElement('div');
+  wrap.className = 'video-wrap';
+
+  // Hidden video element used only for thumbnail generation + playback
+  const video = document.createElement('video');
+  video.src = item.src;
+  video.preload = 'metadata';
+  video.playsinline = true;
+  video.setAttribute('playsinline', '');
+  video.style.cssText = 'width:100%;display:block;object-fit:cover;';
+
+  // Canvas thumbnail
+  const canvas = document.createElement('canvas');
+  canvas.className = 'video-thumb';
+  canvas.style.display = 'none';
+
+  // Load metadata to grab thumbnail
+  video.addEventListener('loadedmetadata', () => {
+    generateThumbnail(video, canvas);
+  }, { once: true });
+
+  // Play overlay (shown when paused / not started)
+  const vov = document.createElement('div');
+  vov.className = 'vov';
+  vov.innerHTML = `<div class="ctrl-btn">${PLAY_ICON}</div>`;
+
+  // Pause button (shown while playing, bottom-right)
+  const pauseBtn = document.createElement('div');
+  pauseBtn.className = 'pause-btn';
+  pauseBtn.innerHTML = PAUSE_ICON;
+  pauseBtn.title = 'Pause';
+
+  wrap.appendChild(video);
+  wrap.appendChild(canvas);
+  wrap.appendChild(vov);
+  wrap.appendChild(pauseBtn);
+
+  // Caption bar
+  const bar = document.createElement('div');
+  bar.className = 'video-caption-bar';
+  bar.innerHTML = `<span class="media-badge badge-reel" style="margin-bottom:0;flex-shrink:0">Reel</span><span class="vc-text">${item.caption}</span>`;
+
+  div.appendChild(wrap);
+  div.appendChild(bar);
+
+  // ── PLAY on overlay click ──
+  vov.addEventListener('click', (e) => {
+    e.stopPropagation();
+    if (currentVideo && currentVideo !== video) { stopCurrent(); }
+
+    currentVideo = video;
+    currentOverlay = vov;
+    currentPauseBtn = pauseBtn;
+
+    // Hide thumb, show video
+    canvas.style.display = 'none';
+    video.style.display = 'block';
+
+    vov.classList.add('hidden');
+    pauseBtn.classList.add('visible');
+    video.play().catch(() => {});
+  });
+
+  // ── PAUSE button click ──
+  pauseBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    if (!video.paused) {
+      video.pause();
+      pauseBtn.classList.remove('visible');
+      vov.classList.remove('hidden');
+      // Update play overlay icon to show play again
+    }
+  });
+
+  // ── Video ends ──
+  video.addEventListener('ended', () => {
+    vov.classList.remove('hidden');
+    pauseBtn.classList.remove('visible');
+    canvas.style.display = 'block';
+    video.style.display = 'none';
+    video.currentTime = 0;
+    currentVideo = null; currentOverlay = null; currentPauseBtn = null;
+  });
+
+  return div;
+}
+
+// Render gallery
+const masonry = document.getElementById('masonry');
+GALLERY.forEach(item => {
+  const card = item.type === 'photo' ? buildPhotoCard(item) : buildVideoCard(item);
+  masonry.appendChild(card);
+});
+</script>
+</body>
+</html>
