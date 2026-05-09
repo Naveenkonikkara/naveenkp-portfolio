@@ -88,9 +88,10 @@ section{padding:6rem 4rem}
 .proj-card p{font-size:0.86rem;color:var(--muted);line-height:1.75;margin-bottom:1.2rem}
 .proj-link{display:inline-flex;align-items:center;gap:0.4rem;color:var(--accent);font-size:0.8rem;font-weight:500;text-decoration:none;border-bottom:1px solid #c8ff5740;padding-bottom:1px;transition:border-color 0.2s}
 .proj-link:hover{border-color:var(--accent)}
-.proj-visual{background:var(--bg);border:1px solid var(--border);border-radius:10px;height:150px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:0.5rem}
+.proj-visual{background:var(--bg);border:1px solid var(--border);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:0.5rem}
 .proj-visual span{font-size:2.2rem}
 .proj-visual p{font-size:0.72rem;color:var(--muted)}
+.proj-visual .masonry-item{margin-bottom:0;}
 
 /* ── GALLERY ── */
 #gallery{background:var(--bg2);border-top:1px solid var(--border)}
@@ -286,7 +287,7 @@ footer p{color:var(--muted);font-size:0.78rem}
     <span class="pill">Frontend Engineering</span>
     <span class="pill">Social Media & Content</span>
     <span class="pill">Wellness & Mindful Living</span>
-    <span class="pill">n8n · Zapier · Cursor · Lovable</span>
+    <span class="pill">n8n · Zapier · Cursor · Co Pilot · Lovable</span>
   </div>
   <div class="hero-cta">
     <a href="#projects" class="btn-p">See My Work</a>
@@ -396,7 +397,11 @@ footer p{color:var(--muted);font-size:0.78rem}
         </div>
         <a href="https://brahmaspace.com" class="proj-link" target="_blank">Visit brahmaspace.com →</a>
       </div>
-      <div class="proj-visual"><span>🧘</span><p>Wellness & Meditation Platform</p></div>
+      <div class="proj-visual">
+        <div class="masonry-item">
+          <img src="https://res.cloudinary.com/dbsek7bxw/image/upload/v1778299096/Screenshot_2026-05-09_092512_aufkyz.png" alt="Brahmaspace">
+        </div>
+      </div>
     </div>
     <div class="proj-card">
       <div class="proj-badge pb-blue">AI Automation</div>
@@ -592,32 +597,34 @@ footer p{color:var(--muted);font-size:0.78rem}
 </footer>
 
 <script>
+const brahmaSpaceImage = "https://res.cloudinary.com/dbsek7bxw/image/upload/v1778299096/Screenshot_2026-05-09_092512_aufkyz.png";
 // ── Gallery Data ──
 const GALLERY = [
-  { type:"reel", src:"https://res.cloudinary.com/dbsek7bxw/video/upload/v1778253383/wanderingg_sadhu_1687296466_3129591046892095474_4984933647_gthbr8.mp4", caption:"Wandering Sadhu · yoga reel" },
-  { type:"reel", src:"https://res.cloudinary.com/dbsek7bxw/video/upload/v1778253377/ranjani_nl_1718948522_3395108466644113576_5401604597_xw7sdl.mp4", caption:"Ranjani NL · wellness reel" },
-  { type:"reel", src:"https://res.cloudinary.com/dbsek7bxw/video/upload/v1778253376/wanderingg_sadhu_1680521416_3072757319214275107_4984933647_ywhq9w.mp4", caption:"Wandering Sadhu · asana flow" },
-  { type:"photo", src:"https://res.cloudinary.com/dbsek7bxw/image/upload/v1778253375/ranjani_nl_1594051059_2347392883722305692_5401604597_edvqje.jpg", caption:"Ranjani NL · feed post" },
-  { type:"photo", src:"https://res.cloudinary.com/dbsek7bxw/image/upload/v1778253375/ranjani_nl_1594065592_2347514789909974240_5401604597_pkhmsu.jpg", caption:"Ranjani NL · feed post" },
-  { type:"reel", src:"https://res.cloudinary.com/dbsek7bxw/video/upload/v1778253375/wanderingg_sadhu_1670687082_2990252588281634197_4984933647_bjnppp.mp4", caption:"Wandering Sadhu · meditation reel" },
-  { type:"reel", src:"https://res.cloudinary.com/dbsek7bxw/video/upload/v1778253373/wanderingg_sadhu_1701431524_3248164747635083534_4984933647_y51mjw.mp4", caption:"Wandering Sadhu · pranayama reel" },
-  { type:"reel", src:"https://res.cloudinary.com/dbsek7bxw/video/upload/v1778253372/wanderingg_sadhu_1689504353_3148112744439631772_4984933647_odgpjw.mp4", caption:"Wandering Sadhu · vinyasa flow" },
-  { type:"photo", src:"https://res.cloudinary.com/dbsek7bxw/image/upload/v1778253371/Screenshot_2026-05-08_090734_z509yd.png", caption:"Carousel post · wellness" },
-  { type:"photo", src:"https://res.cloudinary.com/dbsek7bxw/image/upload/v1778253370/Screenshot_2026-05-08_091650_ohtp8a.png", caption:"Carousel post · yoga tips" },
-  { type:"photo", src:"https://res.cloudinary.com/dbsek7bxw/image/upload/v1778253370/Screenshot_2026-05-08_090952_z9nnyg.png", caption:"Carousel post · wellness" },
-  { type:"photo", src:"https://res.cloudinary.com/dbsek7bxw/image/upload/v1778253370/Screenshot_2026-05-08_091438_rezikq.png", caption:"Carousel post · yoga tips" },
-  { type:"photo", src:"https://res.cloudinary.com/dbsek7bxw/image/upload/v1778253370/Screenshot_2026-05-08_091548_e4mlgt.png", caption:"Carousel post · mindfulness" },
-  { type:"photo", src:"https://res.cloudinary.com/dbsek7bxw/image/upload/v1778253370/Screenshot_2026-05-08_091059_xvrkdd.png", caption:"Carousel post · wellness" },
+  { type:"video", src:"https://res.cloudinary.com/dbsek7bxw/video/upload/v1778302099/Morning_Affirmation_r5idvf_txzukz.mp4", caption:"Brahmaspace · Meditation · Wellness" },
+  { type:"reel", src:"https://res.cloudinary.com/dbsek7bxw/video/upload/v1778253383/wanderingg_sadhu_1687296466_3129591046892095474_4984933647_gthbr8.mp4", caption:"Yoga · Wellness" },
+  { type:"reel", src:"https://res.cloudinary.com/dbsek7bxw/video/upload/v1778253377/ranjani_nl_1718948522_3395108466644113576_5401604597_xw7sdl.mp4", caption:"Yoga · Wellness" },
+  { type:"reel", src:"https://res.cloudinary.com/dbsek7bxw/video/upload/v1778253376/wanderingg_sadhu_1680521416_3072757319214275107_4984933647_ywhq9w.mp4", caption:"Yoga · Wellness · Asana Flow" },
+  { type:"photo", src:"https://res.cloudinary.com/dbsek7bxw/image/upload/v1778253375/ranjani_nl_1594051059_2347392883722305692_5401604597_edvqje.jpg", caption:"Yoga · Wellness · Feed Post" },
+  { type:"photo", src:"https://res.cloudinary.com/dbsek7bxw/image/upload/v1778253375/ranjani_nl_1594065592_2347514789909974240_5401604597_pkhmsu.jpg", caption:"Yoga · Wellness · Feed Post" },
+  { type:"reel", src:"https://res.cloudinary.com/dbsek7bxw/video/upload/v1778253375/wanderingg_sadhu_1670687082_2990252588281634197_4984933647_bjnppp.mp4", caption:"Yoga · Wellness · Meditation Reel" },
+  { type:"reel", src:"https://res.cloudinary.com/dbsek7bxw/video/upload/v1778253373/wanderingg_sadhu_1701431524_3248164747635083534_4984933647_y51mjw.mp4", caption:"Yoga · Wellness · Pranayama Reel" },
+  { type:"reel", src:"https://res.cloudinary.com/dbsek7bxw/video/upload/v1778253372/wanderingg_sadhu_1689504353_3148112744439631772_4984933647_odgpjw.mp4", caption:"Yoga · Wellness · Vinyasa Flow" },
+  { type:"photo", src:"https://res.cloudinary.com/dbsek7bxw/image/upload/v1778253371/Screenshot_2026-05-08_090734_z509yd.png", caption:"Carousel post · Yoga · Wellness" },
+  { type:"photo", src:"https://res.cloudinary.com/dbsek7bxw/image/upload/v1778253370/Screenshot_2026-05-08_091650_ohtp8a.png", caption:"Carousel post · Yoga · Wellness Tips" },
+  { type:"photo", src:"https://res.cloudinary.com/dbsek7bxw/image/upload/v1778253370/Screenshot_2026-05-08_090952_z9nnyg.png", caption:"Carousel post · Yoga · Wellness" },
+  { type:"photo", src:"https://res.cloudinary.com/dbsek7bxw/image/upload/v1778253370/Screenshot_2026-05-08_091438_rezikq.png", caption:"Carousel post · Yoga · Wellness tips" },
+  { type:"photo", src:"https://res.cloudinary.com/dbsek7bxw/image/upload/v1778253370/Screenshot_2026-05-08_091548_e4mlgt.png", caption:"Carousel post · Mindfulness" },
+  { type:"photo", src:"https://res.cloudinary.com/dbsek7bxw/image/upload/v1778253370/Screenshot_2026-05-08_091059_xvrkdd.png", caption:"Carousel post · Yoga · Wellness" },
   { type:"photo", src:"https://res.cloudinary.com/dbsek7bxw/image/upload/v1778253370/Screenshot_2026-05-08_091334_vg6dh4.png", caption:"Carousel post · yoga journey" },
-  { type:"reel", src:"https://res.cloudinary.com/dbsek7bxw/video/upload/v1778253369/ranjani_nl_1689503828_highlight17927875526191419_cg4eot.mp4", caption:"Ranjani NL · highlight reel" },
-  { type:"reel", src:"https://res.cloudinary.com/dbsek7bxw/video/upload/v1778253369/ranjani_nl_1683470365_highlight17927875526191419_hj4gll.mp4", caption:"Ranjani NL · highlight reel" },
-  { type:"reel", src:"https://res.cloudinary.com/dbsek7bxw/video/upload/v1778253368/ranjani_nl_1698906311_highlight17927875526191419_iji17k.mp4", caption:"Ranjani NL · highlight reel" },
-  { type:"reel", src:"https://res.cloudinary.com/dbsek7bxw/video/upload/v1778253368/wanderingg_sadhu_1676310598_3037433503570252901_4984933647_vi67xn.mp4", caption:"Wandering Sadhu · yoga reel" },
-  { type:"photo", src:"https://res.cloudinary.com/dbsek7bxw/image/upload/v1778253368/ranjani_nl_1655825845_highlight17927875526191419_fgmn8e.webp", caption:"Ranjani NL · highlight cover" },
-  { type:"reel", src:"https://res.cloudinary.com/dbsek7bxw/video/upload/v1778253367/ranjani_nl_1718872576_highlight17927875526191419_kwxsn1.mp4", caption:"Ranjani NL · highlight reel" },
-  { type:"reel", src:"https://res.cloudinary.com/dbsek7bxw/video/upload/v1778253367/ranjani_nl_1710748715_highlight17927875526191419_qggpi3.mp4", caption:"Ranjani NL · highlight reel" },
-  { type:"reel", src:"https://res.cloudinary.com/dbsek7bxw/video/upload/v1778253365/ranjani_nl_1693618164_highlight17927875526191419_rvxweq.mp4", caption:"Ranjani NL · highlight reel" },
-  { type:"reel", src:"https://res.cloudinary.com/dbsek7bxw/video/upload/v1778253364/ranjani_nl_1696654123_highlight17927875526191419_ffxjkq.mp4", caption:"Ranjani NL · highlight reel" },
+  { type:"reel", src:"https://res.cloudinary.com/dbsek7bxw/video/upload/v1778253369/ranjani_nl_1689503828_highlight17927875526191419_cg4eot.mp4", caption:"Yoga · Wellness" },
+  { type:"reel", src:"https://res.cloudinary.com/dbsek7bxw/video/upload/v1778253369/ranjani_nl_1683470365_highlight17927875526191419_hj4gll.mp4", caption:"Yoga · Wellness" },
+  { type:"reel", src:"https://res.cloudinary.com/dbsek7bxw/video/upload/v1778253368/ranjani_nl_1698906311_highlight17927875526191419_iji17k.mp4", caption:"Yoga · Wellness" },
+  { type:"reel", src:"https://res.cloudinary.com/dbsek7bxw/video/upload/v1778253368/wanderingg_sadhu_1676310598_3037433503570252901_4984933647_vi67xn.mp4", caption:"Yoga · Wellness" },
+  { type:"photo", src:"https://res.cloudinary.com/dbsek7bxw/image/upload/v1778253368/ranjani_nl_1655825845_highlight17927875526191419_fgmn8e.webp", caption:"Yoga · Wellness · Highlight Cover" },
+  { type:"reel", src:"https://res.cloudinary.com/dbsek7bxw/video/upload/v1778253367/ranjani_nl_1718872576_highlight17927875526191419_kwxsn1.mp4", caption:"Yoga · Wellness" },
+  { type:"reel", src:"https://res.cloudinary.com/dbsek7bxw/video/upload/v1778253367/ranjani_nl_1710748715_highlight17927875526191419_qggpi3.mp4", caption:"Yoga · Wellness" },
+  { type:"reel", src:"https://res.cloudinary.com/dbsek7bxw/video/upload/v1778253365/ranjani_nl_1693618164_highlight17927875526191419_rvxweq.mp4", caption:"Yoga · Wellness" },
+  { type:"reel", src:"https://res.cloudinary.com/dbsek7bxw/video/upload/v1778253364/ranjani_nl_1696654123_highlight17927875526191419_ffxjkq.mp4", caption:"Yoga · Wellness" },
 ];
 
 // Track currently playing video globally
