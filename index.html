@@ -193,6 +193,34 @@ section{padding:6rem 4rem}
 }
 .vc-text{font-size:0.76rem;color:var(--muted)}
 
+.gallery-toggle{
+  display:flex;
+  align-items:center;
+  gap:0.6rem;
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:8px;
+  padding:0.75rem 1.5rem;
+  color:var(--accent);
+  font-family:'DM Sans',sans-serif;
+  font-size:0.88rem;
+  font-weight:500;
+  cursor:pointer;
+  margin-bottom:2rem;
+  transition:border-color 0.2s,background 0.2s;
+}
+.gallery-toggle:hover{
+  border-color:#c8ff5740;
+  background:#ffffff0a;
+}
+.gallery-body{
+  display:none;
+  overflow:hidden;
+}
+.gallery-body.open{
+  display:block;
+}
+
 .g-tools{
   text-align:center;font-size:0.78rem;color:var(--muted);
   letter-spacing:0.06em;margin-top:0.5rem;
@@ -278,16 +306,16 @@ footer p{color:var(--muted);font-size:0.78rem}
 <section class="hero" id="home">
   <div class="hero-bg"></div>
   <div class="hero-tag"><div class="dot-pulse"></div>Open to opportunities · Kerala, India</div>
-  <h1>Creative Technologist.<br>Builder. <em>Storyteller.</em></h1>
+  <h1>Creative Technologist.<br>AI Systems Builder. <em>Storyteller.</em></h1>
   <p class="hero-sub">9 years of frontend engineering meets AI automation, content creation and wellness branding. I vibe-code, design experiences and tell stories that connect technology with humanity.</p>
   <div class="hero-pills">
     <span class="pill hi">Co-Founder · brahmaspace.com</span>
     <span class="pill hi">Vibe Coder · AI-First Builder</span>
-    <span class="pill">AI Tools & Automation</span>
+    <span class="pill">AI Systems & Automation</span>
     <span class="pill">Frontend Engineering</span>
+    <span class="pill">n8n · Zapier · Cursor · Co Pilot · Lovable</span>
     <span class="pill">Social Media & Content</span>
     <span class="pill">Wellness & Mindful Living</span>
-    <span class="pill">n8n · Zapier · Cursor · Co Pilot · Lovable</span>
   </div>
   <div class="hero-cta">
     <a href="#projects" class="btn-p">See My Work</a>
@@ -340,10 +368,23 @@ footer p{color:var(--muted);font-size:0.78rem}
     </div>
     <div class="sk-card">
       <span class="sk-ico">🤖</span>
-      <h3>AI & Vibe Coding</h3>
-      <p>Building AI-powered workflows and products using a vibe-first, intuition-led approach — Cursor, Lovable, n8n and agentic AI replace conventional development cycles.</p>
+      <h3>AI Systems & Automation</h3>
+      <p>Building AI-powered systems and automation workflows 
+      using OpenAI, Anthropic and open-source LLM ecosystems. 
+      Experienced in prompt engineering, agentic AI workflows, 
+      API integration and deploying intelligent automation 
+      solutions using n8n, Zapier and Python.</p>
       <div class="tags">
-        <span class="tag hi">Cursor</span><span class="tag hi">Lovable</span><span class="tag hi">n8n</span><span class="tag hi">Zapier</span><span class="tag">ChatGPT</span><span class="tag">Claude</span><span class="tag">Gemini</span><span class="tag">Prompt Engineering</span><span class="tag">Python</span>
+        <span class="tag hi">OpenAI API</span>
+        <span class="tag hi">Anthropic API</span>
+        <span class="tag hi">n8n</span>
+        <span class="tag hi">Zapier</span>
+        <span class="tag hi">Prompt Engineering</span>
+        <span class="tag">Agentic AI</span>
+        <span class="tag">Python</span>
+        <span class="tag">Cursor</span>
+        <span class="tag">LLM Integration</span>
+        <span class="tag">Lovable</span>
       </div>
     </div>
     <div class="sk-card">
@@ -404,10 +445,45 @@ footer p{color:var(--muted);font-size:0.78rem}
       </div>
     </div>
     <div class="proj-card">
-      <div class="proj-badge pb-blue">AI Automation</div>
-      <h3>AI Content Extraction System</h3>
-      <p>Built a Python-based AI content extraction pipeline that automates the creation and processing of wellness content — reducing manual effort and scaling output for the brahmaspace brand.</p>
-      <div class="tags"><span class="tag hi">Python</span><span class="tag">n8n</span><span class="tag">AI APIs</span><span class="tag">Automation</span></div>
+      <div class="proj-badge pb-green">AI Systems · Automation</div>
+      <h3>AI Workflow Automation System</h3>
+      <p>Designed and deployed multi-step agentic AI workflows 
+      integrating OpenAI and Anthropic APIs — automating content 
+      extraction, processing and distribution pipelines across 
+      multiple platforms. Reduced manual operations end-to-end 
+      using intelligent automation and LLM-powered decision 
+      making.</p>
+      <div class="tags">
+        <span class="tag hi">n8n</span>
+        <span class="tag hi">Zapier</span>
+        <span class="tag hi">OpenAI API</span>
+        <span class="tag hi">Anthropic API</span>
+        <span class="tag">Python</span>
+        <span class="tag">Agentic AI</span>
+        <span class="tag">LLM Integration</span>
+        <span class="tag">Automation</span>
+      </div>
+    </div>
+    <div class="proj-card">
+      <div class="proj-badge pb-blue">AI · Python · Data</div>
+      <h3>AI Content Extraction & Processing System</h3>
+      <p>Built a Python-based intelligent pipeline that interfaces 
+      with AI APIs to extract, process and structure content data 
+      for downstream automation. The system fetches raw content, 
+      sends it through LLM processing for analysis and 
+      transformation, and outputs structured data ready for 
+      publishing workflows — functioning as an end-to-end 
+      AI-assisted ETL pipeline for content operations.</p>
+      <div class="tags">
+        <span class="tag hi">Python</span>
+        <span class="tag hi">AI APIs</span>
+        <span class="tag hi">LLM Processing</span>
+        <span class="tag">n8n</span>
+        <span class="tag">ETL Pipeline</span>
+        <span class="tag">Data Processing</span>
+        <span class="tag">Automation</span>
+        <span class="tag">Content Systems</span>
+      </div>
     </div>
     <div class="proj-card">
       <div class="proj-badge pb-orange">Enterprise · MNC</div>
@@ -440,10 +516,22 @@ footer p{color:var(--muted);font-size:0.78rem}
 <section id="gallery">
   <div class="s-label">Creative · Social</div>
   <div class="s-title">Visual Stories I've Built</div>
-  <p class="s-sub">Photography, reels and content created for wellness and yoga brands — shot, edited and produced using AI-assisted tools.</p>
+  <p class="s-sub">Photography, reels and content created 
+  for wellness and yoga brands — shot, edited and produced 
+  using AI-assisted tools.</p>
 
-  <div class="masonry" id="masonry"></div>
-  <p class="g-tools">Content created using Canva · Adobe Express · CapCut · Gemini AI</p>
+  <!-- Toggle Button -->
+  <button class="gallery-toggle" id="galleryToggle" 
+    onclick="toggleGallery()">
+    <span id="toggleLabel">▶ Expand Gallery</span>
+  </button>
+
+  <!-- Collapsible Wrapper -->
+  <div class="gallery-body" id="galleryBody">
+    <div class="masonry" id="masonry"></div>
+    <p class="g-tools">Content created using Canva · 
+    Adobe Express · CapCut · Gemini AI</p>
+  </div>
 </section>
 
 <!-- EXPERIENCE -->
@@ -626,6 +714,36 @@ const GALLERY = [
   { type:"reel", src:"https://res.cloudinary.com/dbsek7bxw/video/upload/v1778253365/ranjani_nl_1693618164_highlight17927875526191419_rvxweq.mp4", caption:"Yoga · Wellness" },
   { type:"reel", src:"https://res.cloudinary.com/dbsek7bxw/video/upload/v1778253364/ranjani_nl_1696654123_highlight17927875526191419_ffxjkq.mp4", caption:"Yoga · Wellness" },
 ];
+
+// Gallery toggle
+function toggleGallery() {
+  const body = document.getElementById('galleryBody');
+  const label = document.getElementById('toggleLabel');
+  const isOpen = body.classList.contains('open');
+
+  if (isOpen) {
+    body.classList.remove('open');
+    label.textContent = '▶ Expand Gallery';
+  } else {
+    body.classList.add('open');
+    label.textContent = '▼ Collapse Gallery';
+    // Auto scroll into view smoothly
+    setTimeout(() => {
+      document.getElementById('gallery')
+        .scrollIntoView({ behavior: 'smooth' });
+    }, 100);
+  }
+}
+
+// Auto-open gallery if URL contains #gallery
+if (window.location.hash === '#gallery') {
+  window.addEventListener('load', () => {
+    const body = document.getElementById('galleryBody');
+    const label = document.getElementById('toggleLabel');
+    body.classList.add('open');
+    label.textContent = '▼ Collapse Gallery';
+  });
+}
 
 // Track currently playing video globally
 let currentVideo = null;
